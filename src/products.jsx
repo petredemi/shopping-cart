@@ -1,9 +1,10 @@
+import { useState } from "react";
 
 function Button({ color, background, text, handelClick}){
     const btnStyle ={
         color: color,
         backgroundColor: background,
-        width: '80px',
+        width: '60px',
         margin: '10px'
     }
     return (
@@ -12,15 +13,33 @@ function Button({ color, background, text, handelClick}){
         </>
     )
 }
-function Product({text, price, picture, idInput}){
-    const prodStyle = {
-        display: 'flex',
+function BtnPlusMinus({color, text, handelClick}){
+        const btnStyle = {
+            color: color,
+        }
+        return(
+            <>
+                <button style={btnStyle} onClick={handelClick} >{text}</button>
+            </>
+        )
     }
+function ChooseQuantity({add, sub, q}){
+        return (
+            <>
+                <div className="btnPlusMinus">
+                    <BtnPlusMinus color={'green'} text={'+'} handelClick = {add} />
+                    <div className="qx">{q}</div>
+                    <BtnPlusMinus color={'red'} text={'-'} handelClick={sub}/>
+                </div>
+            </>
+        )
+    }
+function Product({text, price, picture, Click, add, sub, q}){
     return(
         <>
         <div className="prod" >
             <div className="picture">
-                <img src= {'src/images/'+ picture} width={'200px'} alt="" />
+                <img src= {picture} width={'200px'} alt="" />
             </div>
             <div className="description">{text}</div>
             <div className="val" >
@@ -28,27 +47,12 @@ function Product({text, price, picture, idInput}){
                 <div className="currency">£</div>
             </div>
             <li>
-                <label htmlFor= {idInput}>
-                    <input type="number" id= {idInput} name={idInput} min= {0} max={10}/>
-                </label>
-                <Button color = 'white' background='black' text={'add '}/>
+                <ChooseQuantity add = {add}  sub={sub} q={q}/>
+                <Button color={'white'} background={'black'} text={'add'} handelClick={Click}/>
             </li>
         </div>
         </>
     )
 }
-function Products (){
-    return(
-        <>
-            <h4>my Products</h4>
-            <div className="content">
-                <Product price={30} text='Pirite Cristals' idInput='pirite' picture={'pirita.jpg'}/>
-                <Product price={40} text='Cuart Cristals' idInput='cuart' picture={'cuart.jpg'}/>
-            </div>
-            <footer>© PetruD  Webdesign</footer>
 
-        </>
-    )
-}
-
-export default Products
+export default Product
