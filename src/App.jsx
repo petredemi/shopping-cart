@@ -13,12 +13,25 @@ function App(){
                     <Link to="products"><h5>go shopping</h5></Link>
                     <img src="src/assets/cart4.svg" alt=""  height={'35px'} width={'45px'}/>
                     <div className="qa">
-                        <p className="quant">0</p>
+                        <div className="quant">0</div>
                     </div>
                 </div>
             </div>
 
         <h2>Wellcome in our store</h2>
+        <p>
+        People have held many beliefs about minerals throughout history, including that they have magical 
+        powers and can influence human health and emotions. These beliefs have been important in religion, 
+        science, and medicine. 
+
+
+        </p>
+        <p> 
+        Minerals are naturally occurring substances with distinct chemical and physical properties. 
+        They are made up of geometric groups of elements that stack on top of each other to form a crystal lattice. 
+        The shape of the crystal lattice varies from mineral to mineral
+        </p>
+
         <div className="colectie">
             <img src="src/images/colectie-minerale.jpg"  alt=""  />
         </div>

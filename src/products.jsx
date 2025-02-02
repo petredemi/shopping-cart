@@ -55,4 +55,4 @@ function Product({text, price, picture, Click, add, sub, q}){
     )
 }
 
-export default Product
+export {Product, Button}

@@ -1,8 +1,9 @@
 import { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './stylefiles/general.css'
-import Product from './products.jsx'
+import {Product, Button} from './products.jsx'
 import items from './data.jsx'
+
 
 
 function Firstpage (){
@@ -61,6 +62,9 @@ function Firstpage (){
     }
     function EmtyBasket(){
         basket.clear();
+        setQx(0)
+        setBsk([])
+        console.log(basket)
     }
     return (
         <>
@@ -71,7 +75,7 @@ function Firstpage (){
                     <h5>my shoppings </h5>
                     <img src="src/assets/cart4.svg" alt=""  height={'35px'} width={'45px'} onClick={cart}/>
                     <div className="qa">
-                        <p className="quant">{quantity}</p>
+                        <div className="quant">{quantity}</div>
                     </div>
                 </div>
             </div>
@@ -79,6 +83,8 @@ function Firstpage (){
                 <div className="checkOut" style={{display: disp}}>
                     <div className='bsk'>{bsk}</div>
                     <div className='total'>Total: {total} £</div>
+                    <Button color={'white'} background={'black'} text={'clear'} handelClick={EmtyBasket}/>
+
                 </div>
             </div>
             <h4>add products in the shopping cart</h4>

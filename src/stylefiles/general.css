@@ -2,7 +2,7 @@
     display: inline-flex;
     align-items:baseline;
     justify-content:space-between;
-    padding: 1px;
+    padding: 5px;
     background-color: darkgray;
     margin-top: 1px;
     width: 100%;
@@ -26,9 +26,14 @@
 h3, h5{
     margin-bottom: 0px;
     text-shadow: 1px 1px 1px black;
+    color:darkcyan
 }
 h3{
     margin-left: 30px;
+    font-size: 1.5rem;
+}
+h5{
+    font-size: 1.2rem;
 }
 .shopcart{
     display: flex;
@@ -38,6 +43,7 @@ h3{
 }
 .qa{
     margin-left: 2px;
+    height: 40px;
     
 }
 .quant{
@@ -47,6 +53,7 @@ h3{
     width: 15px;
     background-color: red;
     color: white;
+
 }
 li{
     display: flex;
@@ -89,6 +96,8 @@ input{
 .checkOutCart{
     margin-top: 1px;
     position: relative;
+    max-width: 800px;
+    margin: auto;
 }
 .checkOut{
     border: 2px solid grey;
@@ -124,6 +133,17 @@ input{
     max-width: 500px;
     margin: auto;
 }
+p{
+    max-width: 800px;
+    width: 90%;
+    margin: auto;
+}
+p::first-letter {
+    font-size: 150%;
+    font-weight: bold;
+    color: #8A2BE2;
+  }
+
 
 footer{
     padding: 10px;
