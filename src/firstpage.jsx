@@ -9,6 +9,10 @@ function Firstpage (){
     let [qx, setQx] = useState(0)
     let [q1, setQ1] = useState(0)
     let [q2, setQ2] = useState(0)
+    let [q3, setQ3] = useState(0)
+    let [q4, setQ4] = useState(0)
+
+
     let [basket, setBasket] = useState(new Map())
     let [bsk, setBsk] = useState([])
     let [clik, setClik] = useState(false)
@@ -81,6 +85,8 @@ function Firstpage (){
             <div className="content">
                 <Product price={items[0].price} text='Pirite Cristals' idInput='pirite' picture={items[0].picture} Click={() => addCart(q1, setQ1, 0)} add={() =>add(q1, setQ1)} sub={() => sub(q1, setQ1)} q={q1}/>
                 <Product price={items[1].price} text='Cuart Cristals' idInput='cuart' picture={items[1].picture} Click={ () =>addCart(q2, setQ2, 1)} add={() => add(q2, setQ2)} sub={()=> sub(q2, setQ2)} q={q2}/>    
+                <Product price={items[2].price} text='Stibnite Crystals' idInput='stibina' picture={items[2].picture} Click={ () =>addCart(q3, setQ3, 2)} add={() => add(q3, setQ3)} sub={()=> sub(q3, setQ3)} q={q3}/>    
+                <Product price={items[3].price} text='Fluoride Cristals' idInput='florina' picture={items[3].picture} Click={ () =>addCart(q4, setQ4, 3)} add={() => add(q4, setQ4)} sub={()=> sub(q4, setQ4)} q={q4}/>                
             </div>
             <footer>© PetruD  Webdesign</footer>
         </>

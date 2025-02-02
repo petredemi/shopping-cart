@@ -11,6 +11,20 @@ const item2 = {
     price: 80,
     picture: 'src/images/cuart.jpg'
 }
-let items = [item1, item2]
+const item3 = {
+    idInput: 'stibina',
+    name: ' Stibnite Crystals',
+    price: 120,
+    picture: 'src/images/stibina.jpg'
+}
+const item4 = {
+    idInput: 'florina',
+    name: 'Fluoride Crystals',
+    price: 150,
+    picture: 'src/images/florina.jpg'
+}
+
+
+let items = [item1, item2, item3, item4]
 
 export default items

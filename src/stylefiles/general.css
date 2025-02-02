@@ -6,6 +6,7 @@
     background-color: darkgray;
     margin-top: 1px;
     width: 100%;
+    max-width: 800px;
 }
 .colectie{
     display: flex;
@@ -117,7 +118,16 @@ input{
     margin-right: 1px;
     margin-top: 4px;
 }
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 500px;
+    margin: auto;
+}
 
 footer{
+    padding: 10px;
     background-color: darkgray;
+    max-width: 800px;
+    margin: auto;
 }
