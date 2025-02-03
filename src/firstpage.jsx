@@ -73,7 +73,7 @@ function Firstpage (){
                 <h3>Our products</h3>
                 <div className='shopcart'>
                     <h5>my shoppings </h5>
-                    <img src="src/assets/cart4.svg" alt=""  height={'35px'} width={'45px'} onClick={cart}/>
+                    <img src="cart4.svg" alt=""  height={'35px'} width={'45px'} onClick={cart}/>
                     <div className="qa">
                         <div className="quant">{quantity}</div>
                     </div>

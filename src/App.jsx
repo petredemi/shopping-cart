@@ -11,7 +11,7 @@ function App(){
                 <Link to="products"><h3>Our Products</h3></Link>
                 <div className='shopcart'>
                     <Link to="products"><h5>go shopping</h5></Link>
-                    <img src="src/assets/cart4.svg" alt=""  height={'35px'} width={'45px'}/>
+                    <img src="cart4.svg" alt=""  height={'35px'} width={'45px'}/>
                     <div className="qa">
                         <div className="quant">0</div>
                     </div>
@@ -33,7 +33,7 @@ function App(){
         </p>
 
         <div className="colectie">
-            <img src="src/images/colectie-minerale.jpg"  alt=""  />
+            <img src="colectie-minerale.jpg"  alt=""/>
         </div>
         <footer>©2025PetruD  Webdesign</footer>
     </>
