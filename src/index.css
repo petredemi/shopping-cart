@@ -11,7 +11,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  border: 1px solid green
+  width: auto;
+  padding: 0px;
+  
 }
 a {
   font-weight: 500;
@@ -23,9 +25,9 @@ a:hover {
 }
 body {
   display: flex;
-  place-items: center;
-  width: 100wh;
   padding: 0px;
+  justify-content: center;
+  margin: 0px;
 }
 h1 {
   font-size: 3.2em;

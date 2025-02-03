@@ -1,12 +1,14 @@
 .headerbar{
-    display: inline-flex;
+    display: flex;
     align-items:baseline;
     justify-content:space-between;
     padding: 5px;
+    padding-left: 20px;
+    padding-right: 10px;
     background-color: darkgray;
-    margin-top: 1px;
-    width: 100%;
+    margin: auto;
     max-width: 800px;
+
 }
 .colectie{
     display: flex;
@@ -29,17 +31,25 @@ h3, h5{
     color:darkcyan
 }
 h3{
-    margin-left: 30px;
-    font-size: 1.5rem;
+    margin-left: 2px;
+    font-size: 1.4rem;
+    margin-bottom: 0px;
 }
 h5{
     font-size: 1.2rem;
+    text-align: center;
+    color: darkcyan;
+}
+h4{
+    font-size: 1.4rem;
 }
 .shopcart{
     display: flex;
-    align-items:flex-end;
+    align-items: flex-end;
     height: fit-content;
-    margin-right: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 0px;
 }
 .qa{
     margin-left: 2px;
@@ -50,7 +60,7 @@ h5{
     font-size: 1rem;
     border-radius: 50% 50% 50% 50%;
     vertical-align: text-top;
-    width: 15px;
+    width: 18px;
     background-color: red;
     color: white;
 
