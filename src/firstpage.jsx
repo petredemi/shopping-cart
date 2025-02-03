@@ -72,9 +72,9 @@ function Firstpage (){
         <>
             <div className="headerbar">
                 <Link to="/"><h3>Home</h3></Link>
-                <h3>Our products</h3>
+                <h3 style={{color:'red'}}>Our products</h3>
                 <div className='shopcart'>
-                    <h5>my shoppings </h5>
+                    <h5>shoppings </h5>
                     <img src="cart4.svg" alt=""  height={'35px'} width={'45px'} onClick={cart}/>
                     <div className="qa">
                         <div className="quant">{quantity}</div>

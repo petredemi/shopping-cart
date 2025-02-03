@@ -28,7 +28,11 @@
 h3, h5{
     margin-bottom: 0px;
     text-shadow: 1px 1px 1px black;
-    color:darkcyan
+}
+h2{
+    color: darkcyan;
+    text-shadow: 1px 1px 1px black;
+    font-size: 2rem;
 }
 h3{
     margin-left: 2px;

@@ -10,7 +10,7 @@ function App(){
                 <Link to="/"><h3>Home</h3></Link>
                 <Link to="products"><h3>Our Products</h3></Link>
                 <div className='shopcart'>
-                    <Link to="products"><h5>go shopping</h5></Link>
+                    <h5>shoppings</h5>
                     <img src="cart4.svg" alt=""  height={'35px'} width={'45px'}/>
                     <div className="qa">
                         <div className="quant">0</div>
