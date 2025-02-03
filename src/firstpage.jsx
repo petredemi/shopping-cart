@@ -7,23 +7,22 @@ import items from './data.jsx'
 
 
 function Firstpage (){
-    let [qx, setQx] = useState(0)
-    let [q1, setQ1] = useState(0)
+    let [qx, setQx] = useState(0)  //number of items in basket
+    let [q1, setQ1] = useState(0)   
     let [q2, setQ2] = useState(0)
     let [q3, setQ3] = useState(0)
     let [q4, setQ4] = useState(0)
 
-
     let [basket, setBasket] = useState(new Map())
     let [bsk, setBsk] = useState([])
     let [clik, setClik] = useState(false)
-    let [ disp, setDisp] = useState('none')
+    let [disp, setDisp] = useState('none')
     let  total = 0;
     let quantity = 0;
     function cart(){
         if(!clik){
           disp = 'block'
-               setDisp('block')
+            setDisp('block')
             setClik(true)
         }else{
             setDisp('none')
@@ -33,16 +32,19 @@ function Firstpage (){
 
     function addCart(x, sX, y){
       setQx(x + qx)
+      let t = 0
       if(!basket.has(items[y])){
             basket.set(items[y], x)
-            let t = x * items[y].price
-            bsk.push( <div key={items[y].name}>{items[y].name} &nbsp; {items[y].price} {'£ each'}&nbsp;  {x} {'pcs'}  &nbsp; total: {t} {'£'}</div>)
-      }else {
+            t = x * items[y].price
+            bsk[y] = <div key={items[y].idInput}>{items[y].name} &nbsp; {items[y].price} {'£ each'}&nbsp;  {x} {'pcs'}  &nbsp; total: {t} {'£'}</div>
+            sX(0)
+        }else {
             basket.set(items[y], basket.get(items[y]) + x)
-            let t = basket.get(items[y]) * items[y].price 
-            bsk[y] = <div key={items[y].name} >{items[y].name} &nbsp; {items[y].price}{'£ each'} &nbsp;{basket.get(items[y])} {'pcs'} &nbsp; total: {t} {'£'}</div>
+            t = basket.get(items[y]) * items[y].price 
+            bsk[y] = <div key={items[y].idInput} >{items[y].name} &nbsp; {items[y].price}{'£ each'} &nbsp;{basket.get(items[y])} {'pcs'} &nbsp; total: {t} {'£'}</div>
+            sX(0)
         }
-         sX(0)
+        // sX(0)
     }
     if(basket.size != 0){
         for ( let [key, value] of basket){
