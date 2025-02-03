@@ -35,7 +35,7 @@ function App(){
         <div className="colectie">
             <img src="colectie-minerale.jpg"  alt=""/>
         </div>
-        <footer>©2025PetruD  Webdesign</footer>
+        <footer>©2025  PetruD  Webdesign</footer>
     </>
   )
 }
