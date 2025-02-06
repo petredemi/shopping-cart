@@ -126,7 +126,7 @@ input{
 .bsk{
     display: flex;
     flex-direction: column;
-    max-width: 350px;
+    max-width: 400px;
 
 }
 .bsk > div{

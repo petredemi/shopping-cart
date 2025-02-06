@@ -1,11 +1,12 @@
 import { useState } from "react";
 
-function Button({ color, background, text, handelClick}){
+function Button({ color, background, text, margin, padding, handelClick}){
     const btnStyle ={
         color: color,
         backgroundColor: background,
-        width: '60px',
-        margin: '10px'
+        width: 'fit-content',
+        margin: margin + 'px',
+        padding: padding + 'px'
     }
     return (
         <>
@@ -48,7 +49,7 @@ function Product({text, price, picture, Click, add, sub, q}){
             </div>
             <li>
                 <ChooseQuantity add = {add}  sub={sub} q={q}/>
-                <Button color={'white'} background={'black'} text={'add'} handelClick={Click}/>
+                <Button color={'white'} background={'black'} text={'add'} margin = {10} handelClick={Click}/>
             </li>
         </div>
         </>

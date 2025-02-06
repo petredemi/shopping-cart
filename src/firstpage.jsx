@@ -7,7 +7,7 @@ import items from './data.jsx'
 
 
 function Firstpage (){
-    let [qx, setQx] = useState(0)  //number of items in basket
+ //   let [qx, setQx] = useState(0)  //number of items in basket
     let [q1, setQ1] = useState(0)   
     let [q2, setQ2] = useState(0)
     let [q3, setQ3] = useState(0)
@@ -17,7 +17,8 @@ function Firstpage (){
     let [bsk, setBsk] = useState([])
     let [clik, setClik] = useState(false)
     let [disp, setDisp] = useState('none')
-    let  total = 0;
+    let [bskl, setBskL] = useState(0)
+    let total = 0;
     let quantity = 0;
     function cart(){
         if(!clik){
@@ -29,22 +30,29 @@ function Firstpage (){
             setClik(false);
         }
     }
-
+    function removeItems(x){
+        basket.delete(items[x])
+        delete bsk[x]
+        setBskL(basket.size)
+    }
+    console.log(bskl)
+    console.log(basket.size)
+    console.log(bsk)
     function addCart(x, sX, y){
-      setQx(x + qx)
       let t = 0
       if(!basket.has(items[y])){
             basket.set(items[y], x)
             t = x * items[y].price
-            bsk[y] = <div key={items[y].idInput}>{items[y].name} &nbsp; {items[y].price} {'£ each'}&nbsp;  {x} {'pcs'}  &nbsp; total: {t} {'£'}</div>
+            bsk[y] = <div key={items[y].idInput}>{items[y].name} &nbsp; {items[y].price} {'£ each'}&nbsp;  {x} {'pcs'}  &nbsp; total: {t} {'£'} &nbsp;
+            <Button color={'white'} background={'red'} text={'del'} padding={1} handelClick={() => removeItems(y)}/></div>
             sX(0)
         }else {
             basket.set(items[y], basket.get(items[y]) + x)
             t = basket.get(items[y]) * items[y].price 
-            bsk[y] = <div key={items[y].idInput} >{items[y].name} &nbsp; {items[y].price}{'£ each'} &nbsp;{basket.get(items[y])} {'pcs'} &nbsp; total: {t} {'£'}</div>
+            bsk[y] = <div key={items[y].idInput} >{items[y].name} &nbsp; {items[y].price}{'£ each'} &nbsp;{basket.get(items[y])} {'pcs'} &nbsp; total: {t} {'£'}
+            <Button color={'white'} background={'red'} text={'del'} padding={1} handelClick={() => removeItems(y)}/></div>
             sX(0)
         }
-        // sX(0)
     }
     if(basket.size != 0){
         for ( let [key, value] of basket){
@@ -52,7 +60,6 @@ function Firstpage (){
             quantity = quantity + value
             }
         }
-    console.log(quantity)
     function add(x, sX){
         if(x < 10){
                 sX(x + 1)
@@ -64,7 +71,7 @@ function Firstpage (){
     }
     function EmtyBasket(){
         basket.clear();
-        setQx(0)
+    //    setQx(0)
         setBsk([])
         console.log(basket)
     }
@@ -83,9 +90,13 @@ function Firstpage (){
             </div>
             <div className="checkOutCart">
                 <div className="checkOut" style={{display: disp}}>
-                    <div className='bsk'>{bsk}</div>
+                    <div className='bsk' >
+                        {bsk.map((b) => (
+                            b
+                        ))}
+                    </div>
                     <div className='total'>Total: {total} £</div>
-                    <Button color={'white'} background={'black'} text={'clear'} handelClick={EmtyBasket}/>
+                    <Button color={'white'} background={'black'} margin={10} text={'clear'} handelClick={EmtyBasket}/>
 
                 </div>
             </div>
