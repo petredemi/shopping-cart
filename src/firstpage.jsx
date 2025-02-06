@@ -44,13 +44,13 @@ function Firstpage (){
             basket.set(items[y], x)
             t = x * items[y].price
             bsk[y] = <div key={items[y].idInput}>{items[y].name} &nbsp; {items[y].price} {'£ each'}&nbsp;  {x} {'pcs'}  &nbsp; total: {t} {'£'} &nbsp;
-            <Button color={'white'} background={'red'} text={'del'} padding={1} handelClick={() => removeItems(y)}/></div>
+            <Button color={'white'} background={'red'} text={'del'} padding={1} margin={3} handelClick={() => removeItems(y)}/></div>
             sX(0)
         }else {
             basket.set(items[y], basket.get(items[y]) + x)
             t = basket.get(items[y]) * items[y].price 
             bsk[y] = <div key={items[y].idInput} >{items[y].name} &nbsp; {items[y].price}{'£ each'} &nbsp;{basket.get(items[y])} {'pcs'} &nbsp; total: {t} {'£'}
-            <Button color={'white'} background={'red'} text={'del'} padding={1} handelClick={() => removeItems(y)}/></div>
+            <Button color={'white'} background={'red'} text={'del'} padding={1} margin={3} handelClick={() => removeItems(y)}/></div>
             sX(0)
         }
     }
