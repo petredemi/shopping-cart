@@ -54,7 +54,7 @@ function Firstpage (){
             t = x * items[y].price
             bsk[y] = <div key={items[y].idInput}>
             <div className='itembasket'>{items[y].name} &nbsp; {items[y].price} {'£ each'} &nbsp;  {x} {'pcs'}  &nbsp; total: {t} {'£'}</div>
-            <Button color={'white'} background={'red'} text={'del'} padding={1} margin={0} handelClick={() => removeItems(y)}/>
+            <Button color={'white'} background={'red'} text={'del'} padding={3} margin={0} handelClick={() => removeItems(y)}/>
             <BskPM add={() => ad(y)} sub={() => su(y)}/>
             </div>
             sX(0)
@@ -63,7 +63,7 @@ function Firstpage (){
             t = basket.get(items[y]) * items[y].price 
             bsk[y] = <div key={items[y].idInput}>
             <div className='itembasket'>{items[y].name} &nbsp; {items[y].price}{'£ each'} &nbsp;{basket.get(items[y])} {'pcs'} &nbsp; total: {t} {'£'}</div>
-            <Button color={'white'} background={'red'} text={'del'} padding={1} margin={0} handelClick={() => removeItems(y)}/>
+            <Button color={'white'} background={'red'} text={'del'} padding={3} margin={0} handelClick={() => removeItems(y)}/>
             <BskPM add={() => ad(y)} sub={() => su(y)}/>
             </div>
             sX(0)
@@ -97,7 +97,7 @@ function Firstpage (){
        t = basket.get(items[y]) * items[y].price 
        bsk[y] = <div key={items[y].idInput}>
         <div className='itembasket'>{items[y].name} &nbsp; {items[y].price}{'£ each'} &nbsp;{basket.get(items[y])} {'pcs'} &nbsp; total: {t} {'£'}</div>
-       <Button color={'white'} background={'red'} text={'del'} padding={1} margin={0} handelClick={() => removeItems(y)}/>
+       <Button color={'white'} background={'red'} text={'del'} padding={3} margin={0} handelClick={() => removeItems(y)}/>
        <BskPM add={() => ad(y)} sub={() => su(y)}/>
        </div>
         if(basket.size != 0){
@@ -123,7 +123,7 @@ function Firstpage (){
         t = basket.get(items[y]) * items[y].price 
         bsk[y] = <div key={items[y].idInput}>
         <div className='itembasket'>{items[y].name} &nbsp; {items[y].price}{'£ each'} &nbsp;{basket.get(items[y])} {'pcs'} &nbsp; total: {t} {'£'}</div>
-        <Button color={'white'} background={'red'} text={'del'} padding={1} margin={0} handelClick={() => removeItems(y)}/>
+        <Button color={'white'} background={'red'} text={'del'} padding={3} margin={0} handelClick={() => removeItems(y)}/>
         <BskPM add={() => ad(y)} sub={() => su(y)}/>
         </div>
         if(basket.size != 0){

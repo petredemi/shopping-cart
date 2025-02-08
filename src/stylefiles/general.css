@@ -133,7 +133,7 @@ input{
 .bsk > div{
     text-align: right;
     margin-bottom: 3px;
-    font-size: 0.9rem;
+    font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: end;
@@ -154,13 +154,13 @@ input{
     display: flex;
     justify-content:space-between;
     margin: auto;
-    width: 40px;
+    width: 50px;
     margin-left: 10px;
     margin-right: 10px;
 }
 .bskbtn > button{
-    width: 16px;
-    height: 16px;
+    width: 19px;
+    height: 19px;
     height: fit-content;
     padding: 1px;
 
