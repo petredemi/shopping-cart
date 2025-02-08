@@ -1,8 +1,8 @@
 import { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './stylefiles/general.css'
-import {Product, Button} from './products.jsx'
-import items from './data.jsx'
+import {Product, Button, BskPM} from './products.jsx'
+import items from './productsdatabase.jsx'
 
 
 
@@ -18,8 +18,11 @@ function Firstpage (){
     let [clik, setClik] = useState(false)
     let [disp, setDisp] = useState('none')
     let [bskl, setBskL] = useState(0)
+    let [adstate, setAdState] = useState(0)
+
     let total = 0;
     let quantity = 0;
+    let t = 0
     function cart(){
         if(!clik){
           disp = 'block'
@@ -31,6 +34,10 @@ function Firstpage (){
         }
     }
     function removeItems(x){
+        if(basket.size === 1){
+            EmtyBasket()
+            setDisp('none')
+        }
         basket.delete(items[x])
         delete bsk[x]
         setBskL(basket.size)
@@ -39,18 +46,26 @@ function Firstpage (){
     console.log(basket.size)
     console.log(bsk)
     function addCart(x, sX, y){
-      let t = 0
-      if(!basket.has(items[y])){
+      //let t = 0
+        if(basket.size === 0){
+        }
+        if(!basket.has(items[y])){
             basket.set(items[y], x)
             t = x * items[y].price
-            bsk[y] = <div key={items[y].idInput}>{items[y].name} &nbsp; {items[y].price} {'£ each'}&nbsp;  {x} {'pcs'}  &nbsp; total: {t} {'£'} &nbsp;
-            <Button color={'white'} background={'red'} text={'del'} padding={1} margin={3} handelClick={() => removeItems(y)}/></div>
+            bsk[y] = <div key={items[y].idInput}>
+            <div className='itembasket'>{items[y].name} &nbsp; {items[y].price} {'£ each'} &nbsp;  {x} {'pcs'}  &nbsp; total: {t} {'£'}</div>
+            <Button color={'white'} background={'red'} text={'del'} padding={1} margin={0} handelClick={() => removeItems(y)}/>
+            <BskPM add={() => ad(y)} sub={() => su(y)}/>
+            </div>
             sX(0)
         }else {
             basket.set(items[y], basket.get(items[y]) + x)
             t = basket.get(items[y]) * items[y].price 
-            bsk[y] = <div key={items[y].idInput} >{items[y].name} &nbsp; {items[y].price}{'£ each'} &nbsp;{basket.get(items[y])} {'pcs'} &nbsp; total: {t} {'£'}
-            <Button color={'white'} background={'red'} text={'del'} padding={1} margin={3} handelClick={() => removeItems(y)}/></div>
+            bsk[y] = <div key={items[y].idInput}>
+            <div className='itembasket'>{items[y].name} &nbsp; {items[y].price}{'£ each'} &nbsp;{basket.get(items[y])} {'pcs'} &nbsp; total: {t} {'£'}</div>
+            <Button color={'white'} background={'red'} text={'del'} padding={1} margin={0} handelClick={() => removeItems(y)}/>
+            <BskPM add={() => ad(y)} sub={() => su(y)}/>
+            </div>
             sX(0)
         }
     }
@@ -63,6 +78,8 @@ function Firstpage (){
     function add(x, sX){
         if(x < 10){
                 sX(x + 1)
+                console.log(basket)
+
         }
     }
     function sub(x, sX){
@@ -73,7 +90,57 @@ function Firstpage (){
         basket.clear();
     //    setQx(0)
         setBsk([])
+    }
+    function ad(y){
+        if(basket.get(items[y]) < 10){
+       basket.set(items[y], basket.get(items[y])+ 1)
+       t = basket.get(items[y]) * items[y].price 
+       bsk[y] = <div key={items[y].idInput}>
+        <div className='itembasket'>{items[y].name} &nbsp; {items[y].price}{'£ each'} &nbsp;{basket.get(items[y])} {'pcs'} &nbsp; total: {t} {'£'}</div>
+       <Button color={'white'} background={'red'} text={'del'} padding={1} margin={0} handelClick={() => removeItems(y)}/>
+       <BskPM add={() => ad(y)} sub={() => su(y)}/>
+       </div>
+        if(basket.size != 0){
+            let b = 0
+            for ( let [key, value] of basket){
+                total = total + key.price * value
+           ///     quantity = basket.get(key) * key.price; 
+            }     
+            for (const x of basket.values()){
+                    b += x
+                }
+          //  quantity = basket.get(items[y]) * items[y].price; 
+
+            setAdState(b)
+                console.log(adstate)
+        }
         console.log(basket)
+        }
+    }
+    function su(y){
+        if( basket.get(items[y]) > 0){
+        basket.set(items[y], basket.get(items[y]) - 1)
+        t = basket.get(items[y]) * items[y].price 
+        bsk[y] = <div key={items[y].idInput}>
+        <div className='itembasket'>{items[y].name} &nbsp; {items[y].price}{'£ each'} &nbsp;{basket.get(items[y])} {'pcs'} &nbsp; total: {t} {'£'}</div>
+        <Button color={'white'} background={'red'} text={'del'} padding={1} margin={0} handelClick={() => removeItems(y)}/>
+        <BskPM add={() => ad(y)} sub={() => su(y)}/>
+        </div>
+        if(basket.size != 0){
+            let b = 0;
+            for ( let [key, value] of basket){
+                total = total + key.price * value
+                quantity = quantity + value
+                }
+
+            for (const x of basket.values()){
+                    b += x
+                }
+            setAdState(b)
+
+            }
+        console.log(basket)
+        }
     }
     return (
         <>
@@ -91,13 +158,10 @@ function Firstpage (){
             <div className="checkOutCart">
                 <div className="checkOut" style={{display: disp}}>
                     <div className='bsk' >
-                        {bsk.map((b) => (
-                            b
-                        ))}
+                        {bsk.map((item) => (item))}
                     </div>
                     <div className='total'>Total: {total} £</div>
                     <Button color={'white'} background={'black'} margin={10} text={'clear'} handelClick={EmtyBasket}/>
-
                 </div>
             </div>
             <h4>add products in the shopping cart</h4>
@@ -107,6 +171,7 @@ function Firstpage (){
                 <Product price={items[2].price} text='Stibnite Crystals' idInput='stibina' picture={items[2].picture} Click={ () =>addCart(q3, setQ3, 2)} add={() => add(q3, setQ3)} sub={()=> sub(q3, setQ3)} q={q3}/>    
                 <Product price={items[3].price} text='Fluoride Cristals' idInput='florina' picture={items[3].picture} Click={ () =>addCart(q4, setQ4, 3)} add={() => add(q4, setQ4)} sub={()=> sub(q4, setQ4)} q={q4}/>                
             </div>
+            <BskPM/>
             <footer>©2025 PetruD  Webdesign</footer>
         </>
     )

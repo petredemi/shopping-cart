@@ -88,8 +88,8 @@ input{
     margin-bottom: 8px;
 }
 .qx{
-    margin-left: 4px;
-    margin-right: 4px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 .content{
     display: flex;
@@ -117,22 +117,30 @@ input{
     border: 2px solid grey;
     position:absolute;
     width: fit-content;
-    margin-right: 20px;
+    margin-right: 10px;
     right: 0;
     margin-top: 10px;
     padding: 5px;
     background-color: rgb(163, 162, 162);
+
 }
 .bsk{
     display: flex;
     flex-direction: column;
-    max-width: 400px;
+    max-width: 550px;
 
 }
 .bsk > div{
     text-align: right;
     margin-bottom: 3px;
     font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+.itembasket{
+    border-bottom: 1px solid black;
+    margin-right: 5px;
 }
 .total{
     max-width: 100px;
@@ -140,6 +148,22 @@ input{
     text-align: right;
     margin-right: 1px;
     margin-top: 4px;
+}
+.bskbtn{
+    border: 1px solid black;
+    display: flex;
+    justify-content:space-between;
+    margin: auto;
+    width: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.bskbtn > button{
+    width: 16px;
+    height: 16px;
+    height: fit-content;
+    padding: 1px;
+
 }
 .content{
     display: flex;

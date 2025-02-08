@@ -6,7 +6,7 @@ function Button({ color, background, text, margin, padding, handelClick}){
         backgroundColor: background,
         width: 'fit-content',
         margin: margin + 'px',
-        padding: padding + 'px'
+        padding: padding + 'px',
     }
     return (
         <>
@@ -24,6 +24,18 @@ function BtnPlusMinus({color, text, handelClick}){
             </>
         )
     }
+function BskPM({add, sub}){
+    return (
+        <>
+            <div className="bskbtn">
+                <button onClick={add}> + </button>
+                <div> &nbsp;</div>
+                <button onClick={sub}> -</button>
+
+            </div>
+    </>
+    )
+}
 function ChooseQuantity({add, sub, q}){
         return (
             <>
@@ -56,4 +68,4 @@ function Product({text, price, picture, Click, add, sub, q}){
     )
 }
 
-export {Product, Button}
+export {Product, Button, BskPM}
