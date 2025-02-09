@@ -2,7 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './index.css'
-import Firstpage from './firstpage'
+import Shoppingpage from './shoppingpage'
 import App from './App'
 
 const router = createBrowserRouter([
@@ -12,7 +12,7 @@ const router = createBrowserRouter([
       },
       {
         path:  'products',
-        element: <Firstpage/>,
+        element: <Shoppingpage/>,
       },
 ])
 

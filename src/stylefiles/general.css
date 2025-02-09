@@ -1,5 +1,9 @@
 .headerbar{
     display: flex;
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
     align-items:baseline;
     justify-content:space-between;
     padding: 5px;
@@ -8,6 +12,7 @@
     background-color: darkgray;
     margin: auto;
     max-width: 800px;
+    margin-bottom: 10px;
 
 }
 .colectie{
@@ -150,12 +155,11 @@ input{
     margin-top: 4px;
 }
 .bskbtn{
-    border: 1px solid black;
     display: flex;
     justify-content:space-between;
     margin: auto;
     width: 55px;
-    margin-left: 10px;
+    margin-left: 15px;
     margin-right: 10px;
 }
 .bskbtn > button{

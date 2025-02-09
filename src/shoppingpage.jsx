@@ -1,12 +1,12 @@
 import { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import './stylefiles/general.css'
-import {Product, Button, BskPM} from './products.jsx'
+import {Product, Button, BskPM} from './components.jsx'
 import items from './productsdatabase.jsx'
 
 
 
-function Firstpage (){
+function Firstpage ({pro}){
  //   let [qx, setQx] = useState(0)  //number of items in basket
     let [q1, setQ1] = useState(0)   
     let [q2, setQ2] = useState(0)
@@ -19,6 +19,7 @@ function Firstpage (){
     let [disp, setDisp] = useState('none')
     let [bskl, setBskL] = useState(0)
     let [adstate, setAdState] = useState(0)
+    pro = bsk;
 
     let total = 0;
     let quantity = 0;
