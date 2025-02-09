@@ -187,9 +187,23 @@ p::first-letter {
   }
 
 
-footer{
-    padding: 10px;
+footer, .contact{
+    padding: 4px;
     background-color: darkgray;
     max-width: 800px;
     margin: auto;
+}
+.contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0px;
+    padding-top: 3px;
+    margin-bottom: 0px;
+
+}
+.lin{
+    height: 25px;
+    width: 25px;
+    margin-left: 15px;
 }

@@ -7,7 +7,6 @@ import items from './productsdatabase.jsx'
 
 
 function Firstpage ({pro}){
- //   let [qx, setQx] = useState(0)  //number of items in basket
     let [q1, setQ1] = useState(0)   
     let [q2, setQ2] = useState(0)
     let [q3, setQ3] = useState(0)
@@ -89,7 +88,7 @@ function Firstpage ({pro}){
     }
     function EmtyBasket(){
         basket.clear();
-    //    setQx(0)
+        setDisp('none')
         setBsk([])
     }
     function ad(y){
@@ -105,12 +104,10 @@ function Firstpage ({pro}){
             let b = 0
             for ( let [key, value] of basket){
                 total = total + key.price * value
-           ///     quantity = basket.get(key) * key.price; 
             }     
             for (const x of basket.values()){
                     b += x
                 }
-          //  quantity = basket.get(items[y]) * items[y].price; 
 
             setAdState(b)
                 console.log(adstate)
@@ -171,6 +168,13 @@ function Firstpage ({pro}){
                 <Product price={items[1].price} text='Cuart Cristals' idInput='cuart' picture={items[1].picture} Click={ () =>addCart(q2, setQ2, 1)} add={() => add(q2, setQ2)} sub={()=> sub(q2, setQ2)} q={q2}/>    
                 <Product price={items[2].price} text='Stibnite Crystals' idInput='stibina' picture={items[2].picture} Click={ () =>addCart(q3, setQ3, 2)} add={() => add(q3, setQ3)} sub={()=> sub(q3, setQ3)} q={q3}/>    
                 <Product price={items[3].price} text='Fluoride Cristals' idInput='florina' picture={items[3].picture} Click={ () =>addCart(q4, setQ4, 3)} add={() => add(q4, setQ4)} sub={()=> sub(q4, setQ4)} q={q4}/>                
+            </div>
+            <div className="contact">Contact: &nbsp;<a href="mailto: petrudem@yahoo.com" style={{color:'blue'}}>petrudem@yahoo.com</a>
+            <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target = '_blank'>
+                <div class="lin">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" />
+                </div>
+            </a> 
             </div>
             <footer>©2025 PetruD  Webdesign</footer>
         </>

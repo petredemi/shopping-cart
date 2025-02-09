@@ -35,6 +35,13 @@ function App(){
         <div className="colectie">
             <img src="colectie-minerale.jpg"  alt=""/>
         </div>
+        <div className="contact">Contact: &nbsp;<a href="mailto: petrudem@yahoo.com" style={{color:'blue'}}>petrudem@yahoo.com</a>
+            <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target = '_blank'>
+                <div class="lin">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" />
+                </div>
+            </a> 
+        </div>
         <footer>©2025  PetruD  Webdesign</footer>
     </>
   )
