@@ -47,12 +47,12 @@ function ChooseQuantity({add, sub, q}){
             </>
         )
     }
-function Product({text, price, picture, Click, add, sub, q}){
+function Product({text, price, picture, high, Click, add, sub, q}){
     return(
         <>
         <div className="prod" >
             <div className="picture">
-                <img src= {picture} width={'200px'} alt="" />
+                <img src= {picture} width={'200px'} height={high} alt="" />
             </div>
             <div className="description">{text}</div>
             <div className="val" >

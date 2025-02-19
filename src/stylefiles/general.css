@@ -1,3 +1,35 @@
+
+.body{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    margin: auto;
+}
+.shoppingpage{
+    margin: auto;
+}
+.orinoco{
+    font-size: 1.9rem;
+    color: rgb(246, 229, 43);
+    font-weight: 700;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: rgb(167, 222, 167);
+    max-width: 820px;
+    margin: auto;
+    text-shadow: 2px 2px 2px black;
+    padding: 10px;
+
+}
+.active{
+    background-color:black;
+}
+nav{
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
 .headerbar{
     display: flex;
     position: sticky;
@@ -5,19 +37,31 @@
     right: 0;
     left: 0;
     align-items:baseline;
-    justify-content:space-between;
-    padding: 5px;
+    justify-content:space-evenly;
     padding-left: 20px;
-    padding-right: 10px;
-    background-color: darkgray;
+    padding-right: 20px;
+    padding-bottom: 1px;
+    background-color: rgb(58, 116, 167);
     margin: auto;
     max-width: 800px;
-    margin-bottom: 10px;
+}
+.links{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+.home{
+    font-size: 1.6rem;
+    padding: 4px;
+    color: white;
+    text-shadow: 1px 1px 1px black;
 
 }
 .colectie{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     max-width: 700px;
     min-width: 300px;
     margin: auto;
@@ -26,7 +70,7 @@
     border: 3px solid blue;
     padding: 3px;
     border-radius: 10px;
-    max-width: 90%;
+    max-width: 40%;
     height: auto;
     margin: 10px;
 }
@@ -35,28 +79,39 @@ h3, h5{
     text-shadow: 1px 1px 1px black;
 }
 h2{
-    color: darkcyan;
+    color: rgb(215, 33, 12);
     text-shadow: 1px 1px 1px black;
     font-size: 2rem;
 }
 h3{
     margin-left: 2px;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin-bottom: 0px;
 }
 h5{
-    font-size: 1.2rem;
     text-align: center;
-    color: darkcyan;
+    color: rgb(91, 245, 245);
 }
 h4{
     font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+.link{
+    color: white;
+    padding: 4px;
+    text-shadow: 1px 1px 1px black;
+    width: 80px;
+    margin-right: 1px;
+    margin-left: 3px;
+    height: 1.3rem;
+
 }
 .shopcart{
     display: flex;
     align-items: flex-end;
     height: fit-content;
-    margin-right: 10px;
+    margin-right: 20px;
+    margin-top: 20px;
     margin-left: 10px;
     margin-bottom: 0px;
 }
@@ -78,6 +133,7 @@ li{
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 input{
     font-size: 1.1rem;
@@ -102,7 +158,8 @@ input{
 }
 .description{
     font-size: 1.1rem;
-    font-weight: 700;
+    font-weight: 500;
+    max-width: 220px;
 }
 .prod{
     width: fit-content;
@@ -124,7 +181,7 @@ input{
     width: fit-content;
     margin-right: 10px;
     right: 0;
-    margin-top: 10px;
+    margin-top: 1px;
     padding: 5px;
     background-color: rgb(163, 162, 162);
 
@@ -176,9 +233,12 @@ input{
     margin: auto;
 }
 p{
-    max-width: 800px;
+    max-width: 700px;
     width: 90%;
     margin: auto;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    padding-bottom: 2px;
 }
 p::first-letter {
     font-size: 150%;
@@ -186,19 +246,38 @@ p::first-letter {
     color: #8A2BE2;
   }
 
+.presentation{
+    max-width: 800px;
+    margin: auto;
+}
+.groceries{
+    max-width: 750px;
+    margin: auto;
+    margin-bottom: 20px;
+    list-style-type: style;
+    
+}
+.groceries > li{
+    text-align: right;
+    width: fit-content;
+    max-width: 700px;
+    margin: auto;
 
+}
 footer, .contact{
     padding: 4px;
     background-color: darkgray;
-    max-width: 800px;
     margin: auto;
+    max-width: 800px;
+
 }
 .contact{
     display: flex;
     justify-content: center;
     align-items: center;
     padding-bottom: 0px;
-    padding-top: 3px;
+    margin-top: 20px;
+    padding-top: 5px;
     margin-bottom: 0px;
 
 }
