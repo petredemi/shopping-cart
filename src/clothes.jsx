@@ -180,8 +180,8 @@ function Clothes(){
                 <Product price={items[11].price} text= {items[11].name} idInput= {items[11].idInput} picture={items[11].picture} high={'230px'} Click={ () =>addCart(q2, setQ2, 11)} add={() => add(q2, setQ2)} sub={()=> sub(q2, setQ2)} q={q2}/>    
                 <Product price={items[12].price} text= {items[12].name} idInput= {items[12].idInput} picture={items[12].picture} high={'230px'} Click={ () =>addCart(q3, setQ3, 12)} add={() => add(q3, setQ3)} sub={()=> sub(q3, setQ3)} q={q3}/>    
                 <Product price={items[13].price} text= {items[13].name} idInput= {items[13].idInput} picture={items[13].picture} high={'230px'} Click={ () =>addCart(q4, setQ4, 13)} add={() => add(q4, setQ4)} sub={()=> sub(q4, setQ4)} q={q4}/>                
-            </div>
-            <div className="contact">Contact: &nbsp;<a href="mailto: petrudem@yahoo.com" style={{color:'blue'}}>petrudem@yahoo.com</a>
+        </div>
+        <div className="contact">Contact:<a href="mailto: petrudem@yahoo.com" style={{color:'blue'}}>petrudem@yahoo.com</a>
                 <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target = '_blank'>
                     <div className="lin">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" />

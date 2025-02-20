@@ -29,7 +29,7 @@ function BskPM({add, sub}){
         <>
             <div className="bskbtn">
                 <button onClick={add}> + </button>
-                <div> &nbsp;</div>
+                <div> &nbsp; &nbsp; </div>
                 <button onClick={sub}> -</button>
 
             </div>

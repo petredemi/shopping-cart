@@ -111,11 +111,11 @@ function Minerals(){
         setTot(0)
     }
     function ad(y){
-        if(basket.get(items[y]) < 10){
+        if(basket.get(items[y]) > 0){
        basket.set(items[y], basket.get(items[y])+ 1)
        t = basket.get(items[y]) * items[y].price 
        bsk[y] = <div key={items[y].idInput}>
-            <div className='itembasket'>{items[y].name} &nbsp; {items[y].price}{'£ each'} &nbsp;{basket.get(items[y])} {'pcs'} &nbsp; total: {t.toFixed} {'£'}</div>
+            <div className='itembasket'>{items[y].name} &nbsp; {items[y].price}{'£ each'} &nbsp;{basket.get(items[y])} {'pcs'} &nbsp; total: {t.toFixed()} {'£'}</div>
             <Button color={'white'} background={'red'} text={'del'} padding={3} margin={0} handelClick={() => removeItems(y)}/>
             <BskPM add={() => ad(y)} sub={() => su(y)}/>
        </div>
@@ -131,9 +131,7 @@ function Minerals(){
             setQuant(b)
             setAdState(b)
             setTot(totalprice)
-            console.log(adstate)
-        }
-        console.log(basket)
+            }
         }
     }
     function su(y){
