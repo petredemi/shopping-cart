@@ -9,11 +9,8 @@ function App(){
     function change(){
         setXx(4)
 }
-        console.log('sdvdfvdfvfdf')
-
   return (
         <>
-        <h4>ferfeferf</h4>
             <Navlinkbar setXx= {setXx} xx = {xx} change ={change}/>
             <Welcomepage/>
             

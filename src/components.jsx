@@ -47,7 +47,7 @@ function ChooseQuantity({add, sub, q}){
             </>
         )
     }
-function Product({text, price, picture, high, Click, add, sub, q}){
+function Product({text, price, picture, high, Click, add, sub, q, kg}){
     return(
         <>
         <div className="prod" >
@@ -57,7 +57,7 @@ function Product({text, price, picture, high, Click, add, sub, q}){
             <div className="description">{text}</div>
             <div className="val" >
                 <div className="price">{price}</div>
-                <div className="currency">£</div>
+                <div className="currency">&nbsp; £{kg}</div>
             </div>
             <li>
                 <ChooseQuantity add = {add}  sub={sub} q={q}/>

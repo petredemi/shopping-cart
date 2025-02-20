@@ -46,12 +46,12 @@ function Groceries(){
             basket.set(items[y], x)
             t = x * items[y].price
             bsk[y] = <div key={items[y].idInput}>
-                <div className='itembasket'>{items[y].name} &nbsp; {items[y].price} {'£ each'} &nbsp;  {x} {'pcs'}  &nbsp; total: {t.toFixed(2)} {'£'}</div>
+                <div className='itembasket'>{items[y].name} &nbsp; {items[y].price} {'£/kg'} &nbsp;  {x} {'kg'}  &nbsp; total: {t.toFixed(2)} {'£'}</div>
                 <Button color={'white'} background={'red'} text={'del'} padding={3} margin={0} handelClick={() => removeItems(y)}/>
                 <BskPM add={() => ad(y)} sub={() => su(y)}/>
             </div>
             c[y] = <div key={items[y].idInput}>
-                    <div key={items[y].name} className='itembasket'>{items[y].name} &nbsp; {items[y].price}{'£ each'} &nbsp;{basket.get(items[y])} {'pcs'} &nbsp; total: {t.toFixed(2)} {'£'}</div>
+                    <div key={items[y].name} className='itembasket'>{items[y].name} &nbsp; {items[y].price}{'£/kg'} &nbsp;{basket.get(items[y])} {'kg'} &nbsp; total: {t.toFixed(2)} {'£'}</div>
                 </div>
             let b = 0
                 for (const x of basket.values()){
@@ -63,12 +63,12 @@ function Groceries(){
             basket.set(items[y], basket.get(items[y]) + x)
             t = basket.get(items[y]) * items[y].price 
             bsk[y] = <div key={items[y].idInput}>
-                <div className='itembasket'>{items[y].name} &nbsp; {items[y].price}{'£ each'} &nbsp;{basket.get(items[y])} {'pcs'} &nbsp; total: {t.toFixed(2)} {'£'}</div>
+                <div className='itembasket'>{items[y].name} &nbsp; {items[y].price}{'£/kg'} &nbsp;{basket.get(items[y])} {'kg'} &nbsp; total: {t.toFixed(2)} {'£'}</div>
                 <Button color={'white'} background={'red'} text={'del'} padding={3} margin={0} handelClick={() => removeItems(y)}/>
                 <BskPM add={() => ad(y)} sub={() => su(y)}/>
             </div>
             c[y] = <div key={items[y].idInput}>
-                    <div key={items[y].name} className='itembasket'>{items[y].name} &nbsp; {items[y].price}{'£ each'} &nbsp;{basket.get(items[y])} {'pcs'} &nbsp; total: {t.toFixed(2)} {'£'}</div>
+                    <div key={items[y].name} className='itembasket'>{items[y].name} &nbsp; {items[y].price}{'£/kg'} &nbsp;{basket.get(items[y])} {'kg'} &nbsp; total: {t.toFixed(2)} {'£'}</div>
                 </div>
             let b = 0
             for (const x of basket.values()){
@@ -115,7 +115,7 @@ function Groceries(){
        basket.set(items[y], basket.get(items[y])+ 1)
        t = basket.get(items[y]) * items[y].price 
        bsk[y] = <div key={items[y].idInput}>
-            <div className='itembasket'>{items[y].name} &nbsp; {items[y].price}{'£ each'} &nbsp;{basket.get(items[y])} {'pcs'} &nbsp; total: {t.toFixed(2)} {'£'}</div>
+            <div className='itembasket'>{items[y].name} &nbsp; {items[y].price}{'£/kg'} &nbsp;{basket.get(items[y])} {'kg'} &nbsp; total: {t.toFixed(2)} {'£'}</div>
             <Button color={'white'} background={'red'} text={'del'} padding={3} margin={0} handelClick={() => removeItems(y)}/>
             <BskPM add={() => ad(y)} sub={() => su(y)}/>
        </div>
@@ -141,7 +141,7 @@ function Groceries(){
         basket.set(items[y], basket.get(items[y]) - 1)
         t = basket.get(items[y]) * items[y].price 
         bsk[y] = <div key={items[y].idInput}>
-        <div className='itembasket'>{items[y].name} &nbsp; {items[y].price}{'£ each'} &nbsp;{basket.get(items[y])} {'pcs'} &nbsp; total: {t.toFixed(2)} {'£'}</div>
+        <div className='itembasket'>{items[y].name} &nbsp; {items[y].price}{'£/kg'} &nbsp;{basket.get(items[y])} {'kg'} &nbsp; total: {t.toFixed(2)} {'£'}</div>
         <Button color={'white'} background={'red'} text={'del'} padding={3} margin={0} handelClick={() => removeItems(y)}/>
         <BskPM add={() => ad(y)} sub={() => su(y)}/>
         </div>
@@ -175,10 +175,10 @@ function Groceries(){
             <li> Have a busy schedule? We offer same-day delivery!</li>
         </div>
         <div className="content">
-                <Product price={items[20].price} text= {items[20].name} idInput= {items[20].idInput} picture={items[20].picture} Click={() => addCart(q1, setQ1, 20)} add={() =>add(q1, setQ1)} sub={() => sub(q1, setQ1)} q={q1}/>
-                <Product price={items[21].price} text= {items[21].name} idInput= {items[21].idInput} picture={items[21].picture} Click={ () =>addCart(q2, setQ2, 21)} add={() => add(q2, setQ2)} sub={()=> sub(q2, setQ2)} q={q2}/>    
-                <Product price={items[22].price} text= {items[22].name} idInput= {items[22].idInput} picture={items[22].picture} Click={ () =>addCart(q3, setQ3, 22)} add={() => add(q3, setQ3)} sub={()=> sub(q3, setQ3)} q={q3}/>    
-                <Product price={items[23].price} text= {items[23].name} idInput= {items[23].idInput} picture={items[23].picture} Click={ () =>addCart(q4, setQ4, 23)} add={() => add(q4, setQ4)} sub={()=> sub(q4, setQ4)} q={q4}/>                
+                <Product price={items[20].price} kg={'/kg'} text= {items[20].name} idInput= {items[20].idInput} picture={items[20].picture} Click={() => addCart(q1, setQ1, 20)} add={() =>add(q1, setQ1)} sub={() => sub(q1, setQ1)} q={q1}/>
+                <Product price={items[21].price} kg={'/kg'} text= {items[21].name} idInput= {items[21].idInput} picture={items[21].picture} Click={ () =>addCart(q2, setQ2, 21)} add={() => add(q2, setQ2)} sub={()=> sub(q2, setQ2)} q={q2}/>    
+                <Product price={items[22].price} kg={'/kg'} text= {items[22].name} idInput= {items[22].idInput} picture={items[22].picture} Click={ () =>addCart(q3, setQ3, 22)} add={() => add(q3, setQ3)} sub={()=> sub(q3, setQ3)} q={q3}/>    
+                <Product price={items[23].price} kg={'/kg'} text= {items[23].name} idInput= {items[23].idInput} picture={items[23].picture} Click={ () =>addCart(q4, setQ4, 23)} add={() => add(q4, setQ4)} sub={()=> sub(q4, setQ4)} q={q4}/>                
             </div>
             <div className="contact">Contact: &nbsp;<a href="mailto: petrudem@yahoo.com" style={{color:'blue'}}>petrudem@yahoo.com</a>
                 <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target = '_blank'>

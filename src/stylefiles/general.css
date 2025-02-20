@@ -67,8 +67,8 @@ nav{
     margin: auto;
 }
 .colectie > img{
-    border: 3px solid blue;
-    padding: 3px;
+    border: 3px solid rgb(24, 24, 178);
+    padding: 4px;
     border-radius: 10px;
     max-width: 40%;
     height: auto;
